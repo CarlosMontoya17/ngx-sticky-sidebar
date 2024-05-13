@@ -1,0 +1,41 @@
+<ngx-sticky-sidebar
+    [items]="items"
+    [backgroundColor]="backgroundColor"
+    [color]="color"
+    [footerCredits]="credits">
+    <div id="sidebar-header" style="text-align: center;">
+        <span> Sticky Sidebar </span>
+    </div>
+
+    <ng-container id="sidebar-content">
+        <div class="controls">
+            <span class="title"> Manipulate sidebar properties with the tools below: </span>
+            <ul>
+                <li>
+                    <span>Status: {{ status }} </span>
+                </li>
+                <li>
+                    <span>Toggle sidebar status </span>
+                    <button (click)="toogle()">Toogle</button>
+                </li>
+                <li>
+                    <span> Status On </span>
+                    <button (click)="set_value(true)">ON</button>
+                  </li>
+                  <li>
+                    <span> Status Off </span>
+                    <button (click)="set_value(false)">OFF</button>
+                  </li>
+                  <li>
+                    <span> Sidebar background color </span>
+                    <input type="color" [(ngModel)]="backgroundColor">
+                  </li>
+                  <li>
+                    <span> Sidebar color </span>
+                    <input type="color" [(ngModel)]="color">
+                  </li>
+            </ul>
+        </div>
+        <router-outlet></router-outlet>
+    </ng-container>
+</ngx-sticky-sidebar>
